@@ -18,3 +18,8 @@ export async function userDelete(id: number) {
     const resp = await api.delete(`/user/${id}`);
     return resp.data;
 }
+
+export async function userUpdate(id: number, email: string, name?: string) {
+  const resp = await api.put(`/user/${id}`, { email, name });
+  return resp.data;
+}
